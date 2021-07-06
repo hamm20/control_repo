@@ -11,8 +11,17 @@ node 'master.puppet.vm' {
 
 node /^web/ {
   include role::app_server
+  file { '/root/ipinfo':
+    ensure => file,
+    content => $networking.interfaces.eth0.ip,
+  }
 }
 
 node /^db/ {
   include role::db_server
+  file { '/root/ipinfo':
+    ensure => file,
+    content => $networking.interfaces.eth0.ip,
+  }
+
 }
