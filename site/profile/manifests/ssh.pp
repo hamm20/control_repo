@@ -1,5 +1,5 @@
 class profile::ssh {
-  service { '/etc/ssh/sshd_config':
+  service { '/usr/sbin/sshd':
     ensure => running,
     enable => true,
   }
