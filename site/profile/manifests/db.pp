@@ -1,2 +1,2 @@
-class profile::d {
+class profile::db {
 }
